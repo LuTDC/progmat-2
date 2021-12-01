@@ -24,6 +24,11 @@ for i in range(num_agentes):
         c[i,j] = int(aux[j])
 
 
+#TODO Adicionar a leitura dos recursos consumidos por cada agente
+
+#TODO Adicionar a leitura da capacidade de cada agente
+
+
 #Adicionando a variavel binaria X
 xvar = {}
 for i in range(num_agentes):
@@ -37,6 +42,10 @@ modelo.setObjective(gurobi.quicksum(gurobi.quicksum(xvar[i,j]*c[i,j] for j in ra
 # Add constraint: x + 2 y + 3 z <= 4
 for i in range(num_agentes):
     modelo.addConstr(gurobi.quicksum(xvar[i,j] for j in range(num_tarefas)) == 1)
+
+
+#TODO Adicionar a restricao de recurso de cada agente SUM{j=1}( aij*xij ≤ capi)
+
 
 #Possibilidade de escrever o modelo
 #modelo.write("modelo.lp")
