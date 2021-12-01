@@ -1,15 +1,7 @@
-archflags = -march=native -mtune=native
-optimizationflags = -O3
-libraries = -lgurobi
-
-
-all:	compile
-
-compile:
-	gcc src/main.c -o bin/Main $(libraries) $(archflags) $(optimizationflags)
+all:	run
 
 run:
-	./bin/Main
+	./run.sh
 
 clean:
-	rm Main
+	rm solutions/*
