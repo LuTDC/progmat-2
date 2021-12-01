@@ -12,23 +12,23 @@ void cria_ambiente(GRBenv *ambiente){
     GRBstartenv(ambiente);
 }
 
-void cria_modelo(GRBenv *ambiente, GRBmodel *modelo){
+void cria_modelo(GRBenv *ambiente, GRBmodel *modelo, int num_variaveis){
     // GRB_CONTINUOUS, GRB_BINARY, GRB_INTEGER, GRB_SEMICONT ou GRB_SEMIINT
     // GRBnewmodel(ambiente, modelo, "modelo", num_variaveis, objetivo, NULL, NULL, GRB_CONTINUOUS, variaveis);
-    GRBnewmodel(ambiente, &modelo, "modelo", NULL,NULL,NULL,NULL,NULL,NULL);
-    GRBsetintattr(model, GRB_INT_ATTR_MODELSENSE, GRB_MAXIMIZE);
+    GRBnewmodel(ambiente, &modelo, "modelo", num_variaveis,NULL,NULL,NULL,NULL,NULL);
+    GRBsetintattr(modelo, GRB_INT_ATTR_MODELSENSE, GRB_MAXIMIZE);
 }
 
 
 //Modificar para leitura
-void adiciona_variaveis(int num_variaveis, double *obj, int *tipo_variaveis){
+void adiciona_variaveis(GRBmodel *modelo, int num_variaveis, double *obj, int *tipo_variaveis){
 
     for(int i=0; i<num_variaveis; i++){
         obj[i] = 1; //scanf("%lf",&obj[i])
         tipo_variaveis[i] = GRB_CONTINUOUS;
     }
 
-    GRBaddvars(model, num_variaveis, 0, NULL, NULL, NULL, obj, NULL, NULL, vtype, NULL);
+    GRBaddvars(modelo, num_variaveis, 0, NULL, NULL, NULL, obj, NULL, NULL, vtype, NULL);
 }
 
 //Modificar para leitura
@@ -90,9 +90,9 @@ int main(int   argc, char *argv[]){
 
     cria_ambiente(ambiente):
 
-    cria_modelo(modelo);
+    cria_modelo(ambiente,modelo,num_variaveis);
 
-    adiciona_variaveis(num_variaveis, objetivo);
+    adiciona_variaveis(modelo, num_variaveis, objetivo);
 
     adiciona_restricoes(num_restricoes, num_variaveis, indices, coeficientes, sinais, valores);
 
