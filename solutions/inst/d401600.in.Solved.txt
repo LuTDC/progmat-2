@@ -1,0 +1,68 @@
+Academic license - for non-commercial use only - expires 2022-10-07
+Using license file /home/tomieiro/gurobi.lic
+Changed value of parameter TimeLimit to 180.0
+   Prev: inf  Min: 0.0  Max: inf  Default: inf
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (linux64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 40 rows, 64000 columns and 64000 nonzeros
+Model fingerprint: 0xaabb627f
+Variable types: 0 continuous, 64000 integer (64000 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [1e+00, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective -2441.000000
+Presolve removed 40 rows and 64000 columns
+Presolve time: 0.04s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.05 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 2: -69 -2441 
+No other solutions better than -69
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -6.900000000000e+01, best bound -6.900000000000e+01, gap 0.0000%
+x{0,47}
+x{1,438}
+x{2,371}
+x{3,983}
+x{4,1212}
+x{5,1366}
+x{6,1583}
+x{7,1127}
+x{8,1136}
+x{9,837}
+x{10,339}
+x{11,1389}
+x{12,19}
+x{13,991}
+x{14,871}
+x{15,774}
+x{16,422}
+x{17,656}
+x{18,1039}
+x{19,1530}
+x{20,365}
+x{21,1439}
+x{22,426}
+x{23,666}
+x{24,1185}
+x{25,1438}
+x{26,486}
+x{27,1261}
+x{28,92}
+x{29,1543}
+x{30,425}
+x{31,806}
+x{32,549}
+x{33,1131}
+x{34,1519}
+x{35,618}
+x{36,930}
+x{37,1319}
+x{38,541}
+x{39,1361}
+Valor da funcao objetivo: -69

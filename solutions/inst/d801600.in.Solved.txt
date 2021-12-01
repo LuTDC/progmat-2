@@ -1,0 +1,108 @@
+Academic license - for non-commercial use only - expires 2022-10-07
+Using license file /home/tomieiro/gurobi.lic
+Changed value of parameter TimeLimit to 180.0
+   Prev: inf  Min: 0.0  Max: inf  Default: inf
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (linux64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 80 rows, 128000 columns and 128000 nonzeros
+Model fingerprint: 0x32f22554
+Variable types: 0 continuous, 128000 integer (128000 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+00]
+  Objective range  [1e+00, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 1e+00]
+Found heuristic solution: objective -4972.000000
+Presolve removed 80 rows and 128000 columns
+Presolve time: 0.09s
+Presolve: All rows and columns removed
+
+Explored 0 nodes (0 simplex iterations) in 0.12 seconds
+Thread count was 1 (of 4 available processors)
+
+Solution count 2: -124 -4972 
+No other solutions better than -124
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -1.240000000000e+02, best bound -1.240000000000e+02, gap 0.0000%
+x{0,978}
+x{1,597}
+x{2,1324}
+x{3,260}
+x{4,1256}
+x{5,952}
+x{6,1475}
+x{7,1074}
+x{8,515}
+x{9,623}
+x{10,681}
+x{11,1015}
+x{12,490}
+x{13,1257}
+x{14,228}
+x{15,926}
+x{16,477}
+x{17,18}
+x{18,1039}
+x{19,58}
+x{20,1099}
+x{21,910}
+x{22,1419}
+x{23,994}
+x{24,609}
+x{25,833}
+x{26,1262}
+x{27,1178}
+x{28,891}
+x{29,1394}
+x{30,783}
+x{31,1039}
+x{32,1458}
+x{33,1520}
+x{34,616}
+x{35,278}
+x{36,600}
+x{37,147}
+x{38,354}
+x{39,1429}
+x{40,852}
+x{41,1307}
+x{42,668}
+x{43,1193}
+x{44,882}
+x{45,338}
+x{46,591}
+x{47,1436}
+x{48,1061}
+x{49,912}
+x{50,372}
+x{51,944}
+x{52,1163}
+x{53,1550}
+x{54,1105}
+x{55,1470}
+x{56,1340}
+x{57,1464}
+x{58,1361}
+x{59,1350}
+x{60,583}
+x{61,76}
+x{62,1517}
+x{63,630}
+x{64,98}
+x{65,1101}
+x{66,1315}
+x{67,1547}
+x{68,1175}
+x{69,1201}
+x{70,205}
+x{71,1348}
+x{72,1240}
+x{73,843}
+x{74,1036}
+x{75,809}
+x{76,727}
+x{77,913}
+x{78,1104}
+x{79,1145}
+Valor da funcao objetivo: -124
