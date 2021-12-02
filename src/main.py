@@ -50,14 +50,16 @@ for i in range(num_agentes):
 modelo.setObjective(gurobi.quicksum(gurobi.quicksum(xvar[i,j]*c[i,j] for j in range(num_tarefas) ) for i in range(num_agentes)), GRB.MAXIMIZE)
 
 # Adicionando restricao: cada tarefa eh feita por somente um agente
-for i in range(num_agentes):
-    modelo.addConstr(gurobi.quicksum(xvar[i,j] for j in range(num_tarefas)) == 1)
+for j in range(num_tarefas):
+    modelo.addConstr(gurobi.quicksum(xvar[i,j] for i in range(num_agentes)) == 1)
 
 
 # Adicionando restricao: cada agente realiza tarefas de acordo com seus recursos
 for i in range(num_agentes):
     modelo.addConstr(gurobi.quicksum(xvar[i,j]*a[i,j] for j in range(num_tarefas)) <= cap[i])
 
+#Escrevendo no arquivo
+#modelo.write("modelo.lp")
 
 #Otimizando o modelo
 modelo.optimize()
@@ -66,5 +68,5 @@ modelo.optimize()
 for v in modelo.getVars():
     index = int(str(v).find("value"))
     if (int(float((str(v))[index+6:-2]))) == 1:
-        print(v.varName)
+        print(v)
 print('Valor da funcao objetivo: %g' % modelo.objVal)
