@@ -4,7 +4,12 @@ import numpy as np
 
 #Criando modelo e definindo limite de tempo
 modelo = gurobi.Model("modelo")
-modelo.setParam('TimeLimit', 3*60)
+modelo.setParam("TimeLimit", 3*60)
+modelo.setParam("Presolve", 2)
+modelo.setParam("Cuts", 3)
+modelo.setParam("VarBranch", 0)
+modelo.setParam("BranchDir", 1)
+
 
 #Lendo numero de agentes e numero de tarefas do arquivo
 aux = input()

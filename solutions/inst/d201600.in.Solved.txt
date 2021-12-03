@@ -2,6 +2,14 @@ Academic license - for non-commercial use only - expires 2022-10-07
 Using license file /home/tomieiro/gurobi.lic
 Changed value of parameter TimeLimit to 180.0
    Prev: inf  Min: 0.0  Max: inf  Default: inf
+Changed value of parameter Presolve to 2
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Changed value of parameter Cuts to 3
+   Prev: -1  Min: -1  Max: 3  Default: -1
+Changed value of parameter VarBranch to 0
+   Prev: -1  Min: -1  Max: 3  Default: -1
+Changed value of parameter BranchDir to 1
+   Prev: 0  Min: -1  Max: 1  Default: 0
 Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (linux64)
 Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
 Optimize a model with 1620 rows, 32000 columns and 64000 nonzeros
@@ -12,56 +20,87 @@ Coefficient statistics:
   Objective range  [1e+00, 1e+02]
   Bounds range     [1e+00, 1e+00]
   RHS range        [1e+00, 3e+03]
-Presolve time: 0.41s
+Presolve time: 0.34s
 Presolved: 1620 rows, 32000 columns, 64000 nonzeros
 Variable types: 0 continuous, 32000 integer (32000 binary)
 Found heuristic solution: objective -112163.0000
+Presolved: 1620 rows, 32000 columns, 64000 nonzeros
 
-Root relaxation: objective -9.782135e+04, 4232 iterations, 0.83 seconds
+
+Root relaxation: objective -9.782135e+04, 2796 iterations, 0.24 seconds
 
     Nodes    |    Current Node    |     Objective Bounds      |     Work
  Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
 
-     0     0 -97821.350    0   38 -112163.00 -97821.350  12.8%     -    1s
-H    0     0                    -97941.00000 -97821.350  0.12%     -    5s
-     0     0 -97821.503    0   52 -97941.000 -97821.503  0.12%     -    8s
-H    0     0                    -97914.00000 -97821.503  0.09%     -   14s
-     0     0 -97821.615    0   66 -97914.000 -97821.615  0.09%     -   14s
-     0     0 -97821.657    0   68 -97914.000 -97821.657  0.09%     -   14s
-     0     0 -97821.681    0   74 -97914.000 -97821.681  0.09%     -   14s
-     0     0 -97821.770    0   98 -97914.000 -97821.770  0.09%     -   15s
-     0     0 -97821.770    0   98 -97914.000 -97821.770  0.09%     -   20s
-     0     2 -97822.000    0   98 -97914.000 -97822.000  0.09%     -   28s
-     3     6 -97822.000    2   84 -97914.000 -97822.000  0.09%  23.3   32s
-    25    30 -97822.000    8   74 -97914.000 -97822.000  0.09%  15.9   42s
-    29    56 -97822.000    9   74 -97914.000 -97822.000  0.09%  15.9   45s
-    55    63 -97822.000   19   68 -97914.000 -97822.000  0.09%  15.8   60s
-H   56    63                    -97897.00000 -97822.000  0.08%  15.5   60s
-    62   181 -97822.000   20   66 -97897.000 -97822.000  0.08%  16.0   71s
-   180   311 -97822.215   56   58 -97897.000 -97822.000  0.08%  15.6   88s
-   310   447 -97822.772   96   48 -97897.000 -97822.000  0.08%  14.4  102s
-   446   601 -97823.364  152   48 -97897.000 -97822.000  0.08%  13.6  116s
-   600   721 -97823.891  221   46 -97897.000 -97822.000  0.08%  11.9  135s
-   720   886 -97824.177  264   42 -97897.000 -97822.000  0.08%  11.1  149s
-H  885   894                    -97896.00000 -97822.000  0.08%  10.2  173s
-   893   937 -97824.657  339   38 -97896.000 -97822.000  0.08%  10.2  180s
-H  906   937                    -97877.00000 -97822.000  0.06%  10.2  180s
+     0     0 -97821.350    0   38 -112163.00 -97821.350  12.8%     -    0s
+H    0     0                    -97941.00000 -97821.350  0.12%     -    2s
+     0     0 -97821.486    0   52 -97941.000 -97821.486  0.12%     -    3s
+H    0     0                    -97923.00000 -97821.486  0.10%     -    6s
+     0     0 -97821.612    0   64 -97923.000 -97821.612  0.10%     -    6s
+     0     0 -97821.674    0   72 -97923.000 -97821.674  0.10%     -    6s
+     0     0 -97821.678    0   72 -97923.000 -97821.678  0.10%     -    6s
+     0     0 -97821.752    0   76 -97923.000 -97821.752  0.10%     -    6s
+     0     0 -97821.752    0   76 -97923.000 -97821.752  0.10%     -    7s
+     0     2 -97822.000    0   76 -97923.000 -97822.000  0.10%     -    9s
+     1     4 -97822.000    1   74 -97923.000 -97822.000  0.10%   5.0   10s
+H   43    45                    -97921.00000 -97822.000  0.10%  15.8   14s
+    44    92 -97822.202   30   56 -97921.000 -97822.000  0.10%  16.1   15s
+    91   138 -97822.554   46   58 -97921.000 -97822.000  0.10%  16.3   20s
+H   93   138                    -97908.00000 -97822.000  0.09%  16.1   20s
+   137   337 -97823.380   69   48 -97908.000 -97822.000  0.09%  15.6   26s
+   336   431 -97827.161  160   38 -97908.000 -97822.000  0.09%  17.7   30s
+H  383   431                    -97905.00000 -97822.000  0.08%  18.7   30s
+   430   611 -97831.644  207   37 -97905.000 -97822.000  0.08%  19.4   35s
+H  748   799                    -97896.00000 -97822.000  0.08%  23.7   44s
+   798  1076 -97874.654  408   38 -97896.000 -97822.000  0.08%  24.8   50s
+H 1164  1166                    -97894.00000 -97822.000  0.07%  24.9   54s
+  1212  1308 -97828.592  176   40 -97894.000 -97822.000  0.07%  24.6   59s
+H 1360  1055                    -97860.00000 -97822.000  0.04%  24.4   59s
+  1362  1056 -97829.770  175   76 -97860.000 -97822.000  0.04%  24.4   60s
+  1364  1057 -97827.538  162   38 -97860.000 -97822.000  0.04%  24.4   65s
+  1365  1058 -97830.042  200   50 -97860.000 -97822.000  0.04%  24.3   70s
+  1372  1063 -97822.000   13  118 -97860.000 -97822.000  0.04%  24.2   78s
+  1373  1066 -97822.000   10  110 -97860.000 -97822.000  0.04%  26.5   81s
+  1383  1074 -97822.000   15  100 -97860.000 -97822.000  0.04%  26.5   85s
+  1396  1087 -97822.011   24   70 -97860.000 -97822.000  0.04%  26.5   90s
+H 1399  1032                    -97857.00000 -97822.000  0.04%  26.4   90s
+  1499  1289 -97823.371   77   42 -97857.000 -97822.000  0.04%  25.9   97s
+H 1694  1176                    -97855.00000 -97822.000  0.03%  24.8  103s
+  1696  1299 -97829.204  181   40 -97855.000 -97822.000  0.03%  24.8  107s
+  1819  1444 -97837.551  230   36 -97855.000 -97822.000  0.03%  24.8  112s
+  2061  1739 -97822.109   28   76 -97855.000 -97822.000  0.03%  24.2  115s
+  2689  1991 -97822.000   20  120 -97855.000 -97822.000  0.03%  23.0  121s
+  3145  2256 -97844.255  248   40 -97855.000 -97822.000  0.03%  22.6  126s
+  3664  2572 -97833.716  185   40 -97855.000 -97822.000  0.03%  22.2  131s
+  4086  2783 -97823.218   81   68 -97855.000 -97822.000  0.03%  22.3  136s
+  4307  2968 -97838.430  206   40 -97855.000 -97822.000  0.03%  22.5  140s
+H 4578  2851                    -97853.00000 -97822.000  0.03%  22.6  144s
+  4622  3057 -97822.207   25  132 -97853.000 -97822.000  0.03%  22.7  146s
+  5177  3529 -97822.130   18  150 -97853.000 -97822.000  0.03%  22.9  153s
+  5354  3677 -97823.484   84   50 -97853.000 -97822.000  0.03%  23.0  157s
+  5502  3775 -97823.628   85   54 -97853.000 -97822.000  0.03%  23.1  162s
+  5600  4052 -97826.474  137   44 -97853.000 -97822.000  0.03%  23.1  166s
+  6249  4472 -97825.713  129   44 -97853.000 -97822.000  0.03%  23.2  175s
+  6371  4762 -97834.962  190   38 -97853.000 -97822.000  0.03%  23.2  180s
 
 Cutting planes:
-  Cover: 7
-  MIR: 17
-  StrongCG: 16
-  RLT: 13
+  Cover: 72
+  MIR: 90
+  StrongCG: 91
+  Flow cover: 42
+  RLT: 25
 
-Explored 936 nodes (13759 simplex iterations) in 180.09 seconds
+Explored 6671 nodes (159114 simplex iterations) in 180.03 seconds
 Thread count was 4 (of 4 available processors)
 
-Solution count 6: -97877 -97896 -97897 ... -112163
+Solution count 10: -97853 -97855 -97857 ... -97923
 
 Time limit reached
-Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
+Best objective -9.785300000000e+04, best bound -9.782200000000e+04, gap 0.0317%
 <gurobi.Var x{0,14} (value 1.0)>
 <gurobi.Var x{0,33} (value 1.0)>
+<gurobi.Var x{0,45} (value 1.0)>
+<gurobi.Var x{0,55} (value 1.0)>
 <gurobi.Var x{0,67} (value 1.0)>
 <gurobi.Var x{0,90} (value 1.0)>
 <gurobi.Var x{0,102} (value 1.0)>
@@ -84,6 +123,7 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{0,317} (value 1.0)>
 <gurobi.Var x{0,330} (value 1.0)>
 <gurobi.Var x{0,335} (value 1.0)>
+<gurobi.Var x{0,353} (value 1.0)>
 <gurobi.Var x{0,366} (value 1.0)>
 <gurobi.Var x{0,386} (value 1.0)>
 <gurobi.Var x{0,390} (value 1.0)>
@@ -92,7 +132,6 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{0,452} (value 1.0)>
 <gurobi.Var x{0,478} (value 1.0)>
 <gurobi.Var x{0,505} (value 1.0)>
-<gurobi.Var x{0,562} (value 1.0)>
 <gurobi.Var x{0,568} (value 1.0)>
 <gurobi.Var x{0,595} (value 1.0)>
 <gurobi.Var x{0,618} (value 1.0)>
@@ -120,13 +159,12 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{0,958} (value 1.0)>
 <gurobi.Var x{0,987} (value 1.0)>
 <gurobi.Var x{0,997} (value 1.0)>
-<gurobi.Var x{0,1006} (value 1.0)>
+<gurobi.Var x{0,1014} (value 1.0)>
 <gurobi.Var x{0,1025} (value 1.0)>
 <gurobi.Var x{0,1048} (value 1.0)>
 <gurobi.Var x{0,1085} (value 1.0)>
 <gurobi.Var x{0,1092} (value 1.0)>
 <gurobi.Var x{0,1107} (value 1.0)>
-<gurobi.Var x{0,1120} (value 1.0)>
 <gurobi.Var x{0,1128} (value 1.0)>
 <gurobi.Var x{0,1139} (value 1.0)>
 <gurobi.Var x{0,1145} (value 1.0)>
@@ -135,18 +173,19 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{0,1195} (value 1.0)>
 <gurobi.Var x{0,1220} (value 1.0)>
 <gurobi.Var x{0,1227} (value 1.0)>
+<gurobi.Var x{0,1236} (value 1.0)>
 <gurobi.Var x{0,1241} (value 1.0)>
 <gurobi.Var x{0,1262} (value 1.0)>
 <gurobi.Var x{0,1278} (value 1.0)>
 <gurobi.Var x{0,1301} (value 1.0)>
 <gurobi.Var x{0,1319} (value 1.0)>
-<gurobi.Var x{0,1347} (value 1.0)>
 <gurobi.Var x{0,1385} (value 1.0)>
 <gurobi.Var x{0,1439} (value 1.0)>
 <gurobi.Var x{0,1499} (value 1.0)>
 <gurobi.Var x{0,1510} (value 1.0)>
 <gurobi.Var x{0,1511} (value 1.0)>
 <gurobi.Var x{0,1544} (value 1.0)>
+<gurobi.Var x{0,1547} (value 1.0)>
 <gurobi.Var x{0,1564} (value 1.0)>
 <gurobi.Var x{0,1592} (value 1.0)>
 <gurobi.Var x{1,48} (value 1.0)>
@@ -154,14 +193,14 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{1,106} (value 1.0)>
 <gurobi.Var x{1,125} (value 1.0)>
 <gurobi.Var x{1,126} (value 1.0)>
-<gurobi.Var x{1,185} (value 1.0)>
 <gurobi.Var x{1,188} (value 1.0)>
 <gurobi.Var x{1,208} (value 1.0)>
 <gurobi.Var x{1,214} (value 1.0)>
 <gurobi.Var x{1,226} (value 1.0)>
 <gurobi.Var x{1,285} (value 1.0)>
 <gurobi.Var x{1,303} (value 1.0)>
-<gurobi.Var x{1,376} (value 1.0)>
+<gurobi.Var x{1,373} (value 1.0)>
+<gurobi.Var x{1,400} (value 1.0)>
 <gurobi.Var x{1,414} (value 1.0)>
 <gurobi.Var x{1,436} (value 1.0)>
 <gurobi.Var x{1,438} (value 1.0)>
@@ -171,6 +210,7 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{1,470} (value 1.0)>
 <gurobi.Var x{1,486} (value 1.0)>
 <gurobi.Var x{1,494} (value 1.0)>
+<gurobi.Var x{1,495} (value 1.0)>
 <gurobi.Var x{1,552} (value 1.0)>
 <gurobi.Var x{1,570} (value 1.0)>
 <gurobi.Var x{1,579} (value 1.0)>
@@ -183,18 +223,18 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{1,643} (value 1.0)>
 <gurobi.Var x{1,681} (value 1.0)>
 <gurobi.Var x{1,699} (value 1.0)>
+<gurobi.Var x{1,793} (value 1.0)>
 <gurobi.Var x{1,802} (value 1.0)>
 <gurobi.Var x{1,813} (value 1.0)>
-<gurobi.Var x{1,830} (value 1.0)>
 <gurobi.Var x{1,837} (value 1.0)>
 <gurobi.Var x{1,839} (value 1.0)>
 <gurobi.Var x{1,845} (value 1.0)>
 <gurobi.Var x{1,866} (value 1.0)>
+<gurobi.Var x{1,868} (value 1.0)>
 <gurobi.Var x{1,870} (value 1.0)>
 <gurobi.Var x{1,883} (value 1.0)>
 <gurobi.Var x{1,905} (value 1.0)>
 <gurobi.Var x{1,919} (value 1.0)>
-<gurobi.Var x{1,924} (value 1.0)>
 <gurobi.Var x{1,944} (value 1.0)>
 <gurobi.Var x{1,947} (value 1.0)>
 <gurobi.Var x{1,951} (value 1.0)>
@@ -210,7 +250,6 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{1,1291} (value 1.0)>
 <gurobi.Var x{1,1306} (value 1.0)>
 <gurobi.Var x{1,1331} (value 1.0)>
-<gurobi.Var x{1,1341} (value 1.0)>
 <gurobi.Var x{1,1364} (value 1.0)>
 <gurobi.Var x{1,1378} (value 1.0)>
 <gurobi.Var x{1,1383} (value 1.0)>
@@ -220,7 +259,6 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{1,1401} (value 1.0)>
 <gurobi.Var x{1,1414} (value 1.0)>
 <gurobi.Var x{1,1416} (value 1.0)>
-<gurobi.Var x{1,1418} (value 1.0)>
 <gurobi.Var x{1,1429} (value 1.0)>
 <gurobi.Var x{1,1438} (value 1.0)>
 <gurobi.Var x{1,1476} (value 1.0)>
@@ -234,6 +272,7 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{2,12} (value 1.0)>
 <gurobi.Var x{2,41} (value 1.0)>
 <gurobi.Var x{2,59} (value 1.0)>
+<gurobi.Var x{2,74} (value 1.0)>
 <gurobi.Var x{2,77} (value 1.0)>
 <gurobi.Var x{2,145} (value 1.0)>
 <gurobi.Var x{2,149} (value 1.0)>
@@ -241,16 +280,14 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{2,152} (value 1.0)>
 <gurobi.Var x{2,155} (value 1.0)>
 <gurobi.Var x{2,182} (value 1.0)>
+<gurobi.Var x{2,184} (value 1.0)>
 <gurobi.Var x{2,206} (value 1.0)>
 <gurobi.Var x{2,220} (value 1.0)>
 <gurobi.Var x{2,221} (value 1.0)>
 <gurobi.Var x{2,265} (value 1.0)>
-<gurobi.Var x{2,287} (value 1.0)>
 <gurobi.Var x{2,307} (value 1.0)>
-<gurobi.Var x{2,353} (value 1.0)>
 <gurobi.Var x{2,379} (value 1.0)>
 <gurobi.Var x{2,429} (value 1.0)>
-<gurobi.Var x{2,443} (value 1.0)>
 <gurobi.Var x{2,455} (value 1.0)>
 <gurobi.Var x{2,483} (value 1.0)>
 <gurobi.Var x{2,507} (value 1.0)>
@@ -271,7 +308,9 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{2,751} (value 1.0)>
 <gurobi.Var x{2,769} (value 1.0)>
 <gurobi.Var x{2,777} (value 1.0)>
-<gurobi.Var x{2,793} (value 1.0)>
+<gurobi.Var x{2,810} (value 1.0)>
+<gurobi.Var x{2,832} (value 1.0)>
+<gurobi.Var x{2,859} (value 1.0)>
 <gurobi.Var x{2,885} (value 1.0)>
 <gurobi.Var x{2,925} (value 1.0)>
 <gurobi.Var x{2,968} (value 1.0)>
@@ -290,7 +329,6 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{2,1199} (value 1.0)>
 <gurobi.Var x{2,1202} (value 1.0)>
 <gurobi.Var x{2,1228} (value 1.0)>
-<gurobi.Var x{2,1232} (value 1.0)>
 <gurobi.Var x{2,1242} (value 1.0)>
 <gurobi.Var x{2,1261} (value 1.0)>
 <gurobi.Var x{2,1267} (value 1.0)>
@@ -301,14 +339,12 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{2,1351} (value 1.0)>
 <gurobi.Var x{2,1374} (value 1.0)>
 <gurobi.Var x{2,1377} (value 1.0)>
-<gurobi.Var x{2,1380} (value 1.0)>
 <gurobi.Var x{2,1382} (value 1.0)>
 <gurobi.Var x{2,1435} (value 1.0)>
 <gurobi.Var x{2,1467} (value 1.0)>
 <gurobi.Var x{2,1488} (value 1.0)>
 <gurobi.Var x{2,1505} (value 1.0)>
 <gurobi.Var x{2,1529} (value 1.0)>
-<gurobi.Var x{2,1545} (value 1.0)>
 <gurobi.Var x{2,1563} (value 1.0)>
 <gurobi.Var x{3,1} (value 1.0)>
 <gurobi.Var x{3,7} (value 1.0)>
@@ -320,10 +356,8 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{3,65} (value 1.0)>
 <gurobi.Var x{3,66} (value 1.0)>
 <gurobi.Var x{3,70} (value 1.0)>
-<gurobi.Var x{3,79} (value 1.0)>
 <gurobi.Var x{3,104} (value 1.0)>
 <gurobi.Var x{3,116} (value 1.0)>
-<gurobi.Var x{3,121} (value 1.0)>
 <gurobi.Var x{3,122} (value 1.0)>
 <gurobi.Var x{3,169} (value 1.0)>
 <gurobi.Var x{3,180} (value 1.0)>
@@ -340,20 +374,25 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{3,392} (value 1.0)>
 <gurobi.Var x{3,395} (value 1.0)>
 <gurobi.Var x{3,413} (value 1.0)>
+<gurobi.Var x{3,433} (value 1.0)>
 <gurobi.Var x{3,508} (value 1.0)>
 <gurobi.Var x{3,515} (value 1.0)>
 <gurobi.Var x{3,555} (value 1.0)>
 <gurobi.Var x{3,580} (value 1.0)>
 <gurobi.Var x{3,614} (value 1.0)>
 <gurobi.Var x{3,620} (value 1.0)>
+<gurobi.Var x{3,645} (value 1.0)>
 <gurobi.Var x{3,654} (value 1.0)>
 <gurobi.Var x{3,660} (value 1.0)>
 <gurobi.Var x{3,686} (value 1.0)>
+<gurobi.Var x{3,693} (value 1.0)>
 <gurobi.Var x{3,694} (value 1.0)>
+<gurobi.Var x{3,708} (value 1.0)>
 <gurobi.Var x{3,726} (value 1.0)>
 <gurobi.Var x{3,761} (value 1.0)>
 <gurobi.Var x{3,773} (value 1.0)>
 <gurobi.Var x{3,787} (value 1.0)>
+<gurobi.Var x{3,795} (value 1.0)>
 <gurobi.Var x{3,796} (value 1.0)>
 <gurobi.Var x{3,809} (value 1.0)>
 <gurobi.Var x{3,811} (value 1.0)>
@@ -377,9 +416,9 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{3,1316} (value 1.0)>
 <gurobi.Var x{3,1318} (value 1.0)>
 <gurobi.Var x{3,1322} (value 1.0)>
-<gurobi.Var x{3,1334} (value 1.0)>
 <gurobi.Var x{3,1384} (value 1.0)>
 <gurobi.Var x{3,1412} (value 1.0)>
+<gurobi.Var x{3,1418} (value 1.0)>
 <gurobi.Var x{3,1420} (value 1.0)>
 <gurobi.Var x{3,1461} (value 1.0)>
 <gurobi.Var x{3,1490} (value 1.0)>
@@ -391,20 +430,19 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{4,35} (value 1.0)>
 <gurobi.Var x{4,42} (value 1.0)>
 <gurobi.Var x{4,43} (value 1.0)>
-<gurobi.Var x{4,45} (value 1.0)>
 <gurobi.Var x{4,58} (value 1.0)>
 <gurobi.Var x{4,64} (value 1.0)>
 <gurobi.Var x{4,86} (value 1.0)>
 <gurobi.Var x{4,193} (value 1.0)>
 <gurobi.Var x{4,198} (value 1.0)>
 <gurobi.Var x{4,201} (value 1.0)>
+<gurobi.Var x{4,202} (value 1.0)>
 <gurobi.Var x{4,217} (value 1.0)>
 <gurobi.Var x{4,222} (value 1.0)>
 <gurobi.Var x{4,301} (value 1.0)>
 <gurobi.Var x{4,326} (value 1.0)>
 <gurobi.Var x{4,336} (value 1.0)>
 <gurobi.Var x{4,345} (value 1.0)>
-<gurobi.Var x{4,373} (value 1.0)>
 <gurobi.Var x{4,381} (value 1.0)>
 <gurobi.Var x{4,420} (value 1.0)>
 <gurobi.Var x{4,427} (value 1.0)>
@@ -418,7 +456,6 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{4,572} (value 1.0)>
 <gurobi.Var x{4,588} (value 1.0)>
 <gurobi.Var x{4,590} (value 1.0)>
-<gurobi.Var x{4,619} (value 1.0)>
 <gurobi.Var x{4,625} (value 1.0)>
 <gurobi.Var x{4,633} (value 1.0)>
 <gurobi.Var x{4,646} (value 1.0)>
@@ -431,7 +468,6 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{4,756} (value 1.0)>
 <gurobi.Var x{4,781} (value 1.0)>
 <gurobi.Var x{4,783} (value 1.0)>
-<gurobi.Var x{4,795} (value 1.0)>
 <gurobi.Var x{4,816} (value 1.0)>
 <gurobi.Var x{4,864} (value 1.0)>
 <gurobi.Var x{4,874} (value 1.0)>
@@ -439,8 +475,9 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{4,891} (value 1.0)>
 <gurobi.Var x{4,894} (value 1.0)>
 <gurobi.Var x{4,911} (value 1.0)>
-<gurobi.Var x{4,921} (value 1.0)>
+<gurobi.Var x{4,924} (value 1.0)>
 <gurobi.Var x{4,941} (value 1.0)>
+<gurobi.Var x{4,1016} (value 1.0)>
 <gurobi.Var x{4,1049} (value 1.0)>
 <gurobi.Var x{4,1054} (value 1.0)>
 <gurobi.Var x{4,1065} (value 1.0)>
@@ -453,12 +490,13 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{4,1265} (value 1.0)>
 <gurobi.Var x{4,1280} (value 1.0)>
 <gurobi.Var x{4,1299} (value 1.0)>
+<gurobi.Var x{4,1303} (value 1.0)>
 <gurobi.Var x{4,1323} (value 1.0)>
 <gurobi.Var x{4,1326} (value 1.0)>
+<gurobi.Var x{4,1327} (value 1.0)>
 <gurobi.Var x{4,1353} (value 1.0)>
 <gurobi.Var x{4,1369} (value 1.0)>
 <gurobi.Var x{4,1394} (value 1.0)>
-<gurobi.Var x{4,1424} (value 1.0)>
 <gurobi.Var x{4,1437} (value 1.0)>
 <gurobi.Var x{4,1447} (value 1.0)>
 <gurobi.Var x{4,1460} (value 1.0)>
@@ -483,15 +521,18 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{5,127} (value 1.0)>
 <gurobi.Var x{5,143} (value 1.0)>
 <gurobi.Var x{5,212} (value 1.0)>
+<gurobi.Var x{5,243} (value 1.0)>
 <gurobi.Var x{5,250} (value 1.0)>
 <gurobi.Var x{5,327} (value 1.0)>
 <gurobi.Var x{5,328} (value 1.0)>
 <gurobi.Var x{5,338} (value 1.0)>
+<gurobi.Var x{5,355} (value 1.0)>
 <gurobi.Var x{5,356} (value 1.0)>
 <gurobi.Var x{5,362} (value 1.0)>
 <gurobi.Var x{5,402} (value 1.0)>
 <gurobi.Var x{5,416} (value 1.0)>
 <gurobi.Var x{5,418} (value 1.0)>
+<gurobi.Var x{5,441} (value 1.0)>
 <gurobi.Var x{5,480} (value 1.0)>
 <gurobi.Var x{5,496} (value 1.0)>
 <gurobi.Var x{5,501} (value 1.0)>
@@ -503,16 +544,13 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{5,629} (value 1.0)>
 <gurobi.Var x{5,653} (value 1.0)>
 <gurobi.Var x{5,692} (value 1.0)>
-<gurobi.Var x{5,693} (value 1.0)>
 <gurobi.Var x{5,719} (value 1.0)>
 <gurobi.Var x{5,743} (value 1.0)>
-<gurobi.Var x{5,779} (value 1.0)>
 <gurobi.Var x{5,786} (value 1.0)>
 <gurobi.Var x{5,788} (value 1.0)>
-<gurobi.Var x{5,790} (value 1.0)>
 <gurobi.Var x{5,798} (value 1.0)>
 <gurobi.Var x{5,838} (value 1.0)>
-<gurobi.Var x{5,849} (value 1.0)>
+<gurobi.Var x{5,842} (value 1.0)>
 <gurobi.Var x{5,854} (value 1.0)>
 <gurobi.Var x{5,865} (value 1.0)>
 <gurobi.Var x{5,881} (value 1.0)>
@@ -526,21 +564,19 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{5,975} (value 1.0)>
 <gurobi.Var x{5,994} (value 1.0)>
 <gurobi.Var x{5,995} (value 1.0)>
-<gurobi.Var x{5,1039} (value 1.0)>
 <gurobi.Var x{5,1071} (value 1.0)>
 <gurobi.Var x{5,1073} (value 1.0)>
 <gurobi.Var x{5,1083} (value 1.0)>
 <gurobi.Var x{5,1089} (value 1.0)>
-<gurobi.Var x{5,1132} (value 1.0)>
 <gurobi.Var x{5,1134} (value 1.0)>
 <gurobi.Var x{5,1151} (value 1.0)>
 <gurobi.Var x{5,1174} (value 1.0)>
+<gurobi.Var x{5,1180} (value 1.0)>
 <gurobi.Var x{5,1194} (value 1.0)>
 <gurobi.Var x{5,1256} (value 1.0)>
 <gurobi.Var x{5,1289} (value 1.0)>
 <gurobi.Var x{5,1296} (value 1.0)>
 <gurobi.Var x{5,1340} (value 1.0)>
-<gurobi.Var x{5,1343} (value 1.0)>
 <gurobi.Var x{5,1360} (value 1.0)>
 <gurobi.Var x{5,1386} (value 1.0)>
 <gurobi.Var x{5,1449} (value 1.0)>
@@ -555,25 +591,22 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{5,1598} (value 1.0)>
 <gurobi.Var x{6,9} (value 1.0)>
 <gurobi.Var x{6,13} (value 1.0)>
-<gurobi.Var x{6,88} (value 1.0)>
 <gurobi.Var x{6,99} (value 1.0)>
 <gurobi.Var x{6,148} (value 1.0)>
-<gurobi.Var x{6,184} (value 1.0)>
 <gurobi.Var x{6,205} (value 1.0)>
 <gurobi.Var x{6,223} (value 1.0)>
 <gurobi.Var x{6,231} (value 1.0)>
-<gurobi.Var x{6,233} (value 1.0)>
 <gurobi.Var x{6,261} (value 1.0)>
 <gurobi.Var x{6,266} (value 1.0)>
 <gurobi.Var x{6,278} (value 1.0)>
 <gurobi.Var x{6,294} (value 1.0)>
+<gurobi.Var x{6,313} (value 1.0)>
 <gurobi.Var x{6,321} (value 1.0)>
 <gurobi.Var x{6,334} (value 1.0)>
 <gurobi.Var x{6,364} (value 1.0)>
 <gurobi.Var x{6,365} (value 1.0)>
 <gurobi.Var x{6,490} (value 1.0)>
 <gurobi.Var x{6,492} (value 1.0)>
-<gurobi.Var x{6,500} (value 1.0)>
 <gurobi.Var x{6,502} (value 1.0)>
 <gurobi.Var x{6,518} (value 1.0)>
 <gurobi.Var x{6,522} (value 1.0)>
@@ -589,7 +622,6 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{6,695} (value 1.0)>
 <gurobi.Var x{6,707} (value 1.0)>
 <gurobi.Var x{6,745} (value 1.0)>
-<gurobi.Var x{6,746} (value 1.0)>
 <gurobi.Var x{6,768} (value 1.0)>
 <gurobi.Var x{6,799} (value 1.0)>
 <gurobi.Var x{6,803} (value 1.0)>
@@ -597,10 +629,12 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{6,828} (value 1.0)>
 <gurobi.Var x{6,847} (value 1.0)>
 <gurobi.Var x{6,848} (value 1.0)>
+<gurobi.Var x{6,849} (value 1.0)>
 <gurobi.Var x{6,858} (value 1.0)>
 <gurobi.Var x{6,860} (value 1.0)>
 <gurobi.Var x{6,896} (value 1.0)>
 <gurobi.Var x{6,923} (value 1.0)>
+<gurobi.Var x{6,946} (value 1.0)>
 <gurobi.Var x{6,955} (value 1.0)>
 <gurobi.Var x{6,967} (value 1.0)>
 <gurobi.Var x{6,972} (value 1.0)>
@@ -610,12 +644,11 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{6,1017} (value 1.0)>
 <gurobi.Var x{6,1047} (value 1.0)>
 <gurobi.Var x{6,1064} (value 1.0)>
-<gurobi.Var x{6,1079} (value 1.0)>
 <gurobi.Var x{6,1082} (value 1.0)>
 <gurobi.Var x{6,1088} (value 1.0)>
 <gurobi.Var x{6,1111} (value 1.0)>
-<gurobi.Var x{6,1119} (value 1.0)>
 <gurobi.Var x{6,1123} (value 1.0)>
+<gurobi.Var x{6,1189} (value 1.0)>
 <gurobi.Var x{6,1229} (value 1.0)>
 <gurobi.Var x{6,1240} (value 1.0)>
 <gurobi.Var x{6,1263} (value 1.0)>
@@ -634,7 +667,7 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{6,1452} (value 1.0)>
 <gurobi.Var x{6,1458} (value 1.0)>
 <gurobi.Var x{6,1469} (value 1.0)>
-<gurobi.Var x{6,1493} (value 1.0)>
+<gurobi.Var x{6,1514} (value 1.0)>
 <gurobi.Var x{6,1516} (value 1.0)>
 <gurobi.Var x{6,1533} (value 1.0)>
 <gurobi.Var x{6,1540} (value 1.0)>
@@ -646,6 +679,7 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{7,5} (value 1.0)>
 <gurobi.Var x{7,34} (value 1.0)>
 <gurobi.Var x{7,60} (value 1.0)>
+<gurobi.Var x{7,72} (value 1.0)>
 <gurobi.Var x{7,101} (value 1.0)>
 <gurobi.Var x{7,103} (value 1.0)>
 <gurobi.Var x{7,144} (value 1.0)>
@@ -661,7 +695,6 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{7,305} (value 1.0)>
 <gurobi.Var x{7,332} (value 1.0)>
 <gurobi.Var x{7,342} (value 1.0)>
-<gurobi.Var x{7,355} (value 1.0)>
 <gurobi.Var x{7,380} (value 1.0)>
 <gurobi.Var x{7,407} (value 1.0)>
 <gurobi.Var x{7,412} (value 1.0)>
@@ -675,6 +708,7 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{7,537} (value 1.0)>
 <gurobi.Var x{7,541} (value 1.0)>
 <gurobi.Var x{7,560} (value 1.0)>
+<gurobi.Var x{7,562} (value 1.0)>
 <gurobi.Var x{7,565} (value 1.0)>
 <gurobi.Var x{7,575} (value 1.0)>
 <gurobi.Var x{7,598} (value 1.0)>
@@ -689,12 +723,10 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{7,678} (value 1.0)>
 <gurobi.Var x{7,679} (value 1.0)>
 <gurobi.Var x{7,687} (value 1.0)>
-<gurobi.Var x{7,711} (value 1.0)>
 <gurobi.Var x{7,717} (value 1.0)>
 <gurobi.Var x{7,721} (value 1.0)>
 <gurobi.Var x{7,764} (value 1.0)>
 <gurobi.Var x{7,800} (value 1.0)>
-<gurobi.Var x{7,810} (value 1.0)>
 <gurobi.Var x{7,857} (value 1.0)>
 <gurobi.Var x{7,872} (value 1.0)>
 <gurobi.Var x{7,908} (value 1.0)>
@@ -702,10 +734,9 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{7,998} (value 1.0)>
 <gurobi.Var x{7,1078} (value 1.0)>
 <gurobi.Var x{7,1090} (value 1.0)>
-<gurobi.Var x{7,1105} (value 1.0)>
+<gurobi.Var x{7,1095} (value 1.0)>
 <gurobi.Var x{7,1160} (value 1.0)>
 <gurobi.Var x{7,1166} (value 1.0)>
-<gurobi.Var x{7,1180} (value 1.0)>
 <gurobi.Var x{7,1217} (value 1.0)>
 <gurobi.Var x{7,1234} (value 1.0)>
 <gurobi.Var x{7,1243} (value 1.0)>
@@ -713,22 +744,23 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{7,1268} (value 1.0)>
 <gurobi.Var x{7,1287} (value 1.0)>
 <gurobi.Var x{7,1294} (value 1.0)>
-<gurobi.Var x{7,1327} (value 1.0)>
+<gurobi.Var x{7,1343} (value 1.0)>
 <gurobi.Var x{7,1345} (value 1.0)>
 <gurobi.Var x{7,1350} (value 1.0)>
 <gurobi.Var x{7,1367} (value 1.0)>
 <gurobi.Var x{7,1407} (value 1.0)>
 <gurobi.Var x{7,1408} (value 1.0)>
 <gurobi.Var x{7,1410} (value 1.0)>
+<gurobi.Var x{7,1462} (value 1.0)>
 <gurobi.Var x{7,1479} (value 1.0)>
 <gurobi.Var x{7,1542} (value 1.0)>
 <gurobi.Var x{7,1559} (value 1.0)>
+<gurobi.Var x{7,1572} (value 1.0)>
 <gurobi.Var x{8,0} (value 1.0)>
 <gurobi.Var x{8,94} (value 1.0)>
 <gurobi.Var x{8,96} (value 1.0)>
 <gurobi.Var x{8,115} (value 1.0)>
 <gurobi.Var x{8,137} (value 1.0)>
-<gurobi.Var x{8,141} (value 1.0)>
 <gurobi.Var x{8,166} (value 1.0)>
 <gurobi.Var x{8,170} (value 1.0)>
 <gurobi.Var x{8,211} (value 1.0)>
@@ -739,6 +771,7 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{8,273} (value 1.0)>
 <gurobi.Var x{8,299} (value 1.0)>
 <gurobi.Var x{8,324} (value 1.0)>
+<gurobi.Var x{8,378} (value 1.0)>
 <gurobi.Var x{8,401} (value 1.0)>
 <gurobi.Var x{8,405} (value 1.0)>
 <gurobi.Var x{8,406} (value 1.0)>
@@ -756,7 +789,6 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{8,623} (value 1.0)>
 <gurobi.Var x{8,649} (value 1.0)>
 <gurobi.Var x{8,691} (value 1.0)>
-<gurobi.Var x{8,708} (value 1.0)>
 <gurobi.Var x{8,718} (value 1.0)>
 <gurobi.Var x{8,722} (value 1.0)>
 <gurobi.Var x{8,728} (value 1.0)>
@@ -766,7 +798,6 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{8,771} (value 1.0)>
 <gurobi.Var x{8,805} (value 1.0)>
 <gurobi.Var x{8,841} (value 1.0)>
-<gurobi.Var x{8,868} (value 1.0)>
 <gurobi.Var x{8,895} (value 1.0)>
 <gurobi.Var x{8,898} (value 1.0)>
 <gurobi.Var x{8,922} (value 1.0)>
@@ -774,6 +805,7 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{8,948} (value 1.0)>
 <gurobi.Var x{8,950} (value 1.0)>
 <gurobi.Var x{8,974} (value 1.0)>
+<gurobi.Var x{8,979} (value 1.0)>
 <gurobi.Var x{8,991} (value 1.0)>
 <gurobi.Var x{8,1001} (value 1.0)>
 <gurobi.Var x{8,1008} (value 1.0)>
@@ -785,8 +817,8 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{8,1067} (value 1.0)>
 <gurobi.Var x{8,1072} (value 1.0)>
 <gurobi.Var x{8,1074} (value 1.0)>
+<gurobi.Var x{8,1079} (value 1.0)>
 <gurobi.Var x{8,1141} (value 1.0)>
-<gurobi.Var x{8,1158} (value 1.0)>
 <gurobi.Var x{8,1165} (value 1.0)>
 <gurobi.Var x{8,1168} (value 1.0)>
 <gurobi.Var x{8,1259} (value 1.0)>
@@ -805,7 +837,6 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{8,1485} (value 1.0)>
 <gurobi.Var x{8,1489} (value 1.0)>
 <gurobi.Var x{8,1508} (value 1.0)>
-<gurobi.Var x{8,1530} (value 1.0)>
 <gurobi.Var x{8,1534} (value 1.0)>
 <gurobi.Var x{8,1543} (value 1.0)>
 <gurobi.Var x{8,1549} (value 1.0)>
@@ -837,7 +868,6 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{9,469} (value 1.0)>
 <gurobi.Var x{9,487} (value 1.0)>
 <gurobi.Var x{9,520} (value 1.0)>
-<gurobi.Var x{9,547} (value 1.0)>
 <gurobi.Var x{9,556} (value 1.0)>
 <gurobi.Var x{9,564} (value 1.0)>
 <gurobi.Var x{9,577} (value 1.0)>
@@ -846,6 +876,7 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{9,604} (value 1.0)>
 <gurobi.Var x{9,628} (value 1.0)>
 <gurobi.Var x{9,667} (value 1.0)>
+<gurobi.Var x{9,683} (value 1.0)>
 <gurobi.Var x{9,723} (value 1.0)>
 <gurobi.Var x{9,727} (value 1.0)>
 <gurobi.Var x{9,733} (value 1.0)>
@@ -854,10 +885,9 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{9,789} (value 1.0)>
 <gurobi.Var x{9,818} (value 1.0)>
 <gurobi.Var x{9,823} (value 1.0)>
-<gurobi.Var x{9,842} (value 1.0)>
 <gurobi.Var x{9,853} (value 1.0)>
 <gurobi.Var x{9,914} (value 1.0)>
-<gurobi.Var x{9,946} (value 1.0)>
+<gurobi.Var x{9,954} (value 1.0)>
 <gurobi.Var x{9,962} (value 1.0)>
 <gurobi.Var x{9,966} (value 1.0)>
 <gurobi.Var x{9,985} (value 1.0)>
@@ -871,9 +901,10 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{9,1077} (value 1.0)>
 <gurobi.Var x{9,1084} (value 1.0)>
 <gurobi.Var x{9,1087} (value 1.0)>
+<gurobi.Var x{9,1100} (value 1.0)>
 <gurobi.Var x{9,1104} (value 1.0)>
+<gurobi.Var x{9,1120} (value 1.0)>
 <gurobi.Var x{9,1176} (value 1.0)>
-<gurobi.Var x{9,1189} (value 1.0)>
 <gurobi.Var x{9,1192} (value 1.0)>
 <gurobi.Var x{9,1211} (value 1.0)>
 <gurobi.Var x{9,1212} (value 1.0)>
@@ -884,6 +915,7 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{9,1426} (value 1.0)>
 <gurobi.Var x{9,1443} (value 1.0)>
 <gurobi.Var x{9,1451} (value 1.0)>
+<gurobi.Var x{9,1492} (value 1.0)>
 <gurobi.Var x{9,1503} (value 1.0)>
 <gurobi.Var x{9,1526} (value 1.0)>
 <gurobi.Var x{9,1536} (value 1.0)>
@@ -905,7 +937,6 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{10,304} (value 1.0)>
 <gurobi.Var x{10,331} (value 1.0)>
 <gurobi.Var x{10,348} (value 1.0)>
-<gurobi.Var x{10,378} (value 1.0)>
 <gurobi.Var x{10,391} (value 1.0)>
 <gurobi.Var x{10,403} (value 1.0)>
 <gurobi.Var x{10,421} (value 1.0)>
@@ -913,29 +944,30 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{10,434} (value 1.0)>
 <gurobi.Var x{10,473} (value 1.0)>
 <gurobi.Var x{10,484} (value 1.0)>
+<gurobi.Var x{10,489} (value 1.0)>
 <gurobi.Var x{10,493} (value 1.0)>
 <gurobi.Var x{10,596} (value 1.0)>
 <gurobi.Var x{10,630} (value 1.0)>
 <gurobi.Var x{10,663} (value 1.0)>
 <gurobi.Var x{10,675} (value 1.0)>
 <gurobi.Var x{10,676} (value 1.0)>
+<gurobi.Var x{10,682} (value 1.0)>
 <gurobi.Var x{10,738} (value 1.0)>
 <gurobi.Var x{10,740} (value 1.0)>
+<gurobi.Var x{10,746} (value 1.0)>
 <gurobi.Var x{10,778} (value 1.0)>
 <gurobi.Var x{10,821} (value 1.0)>
 <gurobi.Var x{10,826} (value 1.0)>
-<gurobi.Var x{10,832} (value 1.0)>
 <gurobi.Var x{10,907} (value 1.0)>
 <gurobi.Var x{10,917} (value 1.0)>
 <gurobi.Var x{10,933} (value 1.0)>
 <gurobi.Var x{10,970} (value 1.0)>
-<gurobi.Var x{10,979} (value 1.0)>
 <gurobi.Var x{10,1005} (value 1.0)>
 <gurobi.Var x{10,1058} (value 1.0)>
 <gurobi.Var x{10,1062} (value 1.0)>
-<gurobi.Var x{10,1095} (value 1.0)>
 <gurobi.Var x{10,1108} (value 1.0)>
 <gurobi.Var x{10,1130} (value 1.0)>
+<gurobi.Var x{10,1158} (value 1.0)>
 <gurobi.Var x{10,1197} (value 1.0)>
 <gurobi.Var x{10,1203} (value 1.0)>
 <gurobi.Var x{10,1209} (value 1.0)>
@@ -944,10 +976,8 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{10,1251} (value 1.0)>
 <gurobi.Var x{10,1298} (value 1.0)>
 <gurobi.Var x{10,1320} (value 1.0)>
-<gurobi.Var x{10,1321} (value 1.0)>
 <gurobi.Var x{10,1324} (value 1.0)>
 <gurobi.Var x{10,1338} (value 1.0)>
-<gurobi.Var x{10,1354} (value 1.0)>
 <gurobi.Var x{10,1365} (value 1.0)>
 <gurobi.Var x{10,1366} (value 1.0)>
 <gurobi.Var x{10,1370} (value 1.0)>
@@ -958,6 +988,8 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{10,1445} (value 1.0)>
 <gurobi.Var x{10,1468} (value 1.0)>
 <gurobi.Var x{10,1494} (value 1.0)>
+<gurobi.Var x{10,1506} (value 1.0)>
+<gurobi.Var x{10,1530} (value 1.0)>
 <gurobi.Var x{10,1554} (value 1.0)>
 <gurobi.Var x{10,1566} (value 1.0)>
 <gurobi.Var x{10,1590} (value 1.0)>
@@ -966,6 +998,7 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{11,80} (value 1.0)>
 <gurobi.Var x{11,89} (value 1.0)>
 <gurobi.Var x{11,114} (value 1.0)>
+<gurobi.Var x{11,121} (value 1.0)>
 <gurobi.Var x{11,142} (value 1.0)>
 <gurobi.Var x{11,160} (value 1.0)>
 <gurobi.Var x{11,178} (value 1.0)>
@@ -984,7 +1017,7 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{11,526} (value 1.0)>
 <gurobi.Var x{11,554} (value 1.0)>
 <gurobi.Var x{11,558} (value 1.0)>
-<gurobi.Var x{11,571} (value 1.0)>
+<gurobi.Var x{11,561} (value 1.0)>
 <gurobi.Var x{11,627} (value 1.0)>
 <gurobi.Var x{11,656} (value 1.0)>
 <gurobi.Var x{11,665} (value 1.0)>
@@ -995,12 +1028,13 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{11,822} (value 1.0)>
 <gurobi.Var x{11,844} (value 1.0)>
 <gurobi.Var x{11,852} (value 1.0)>
+<gurobi.Var x{11,899} (value 1.0)>
 <gurobi.Var x{11,938} (value 1.0)>
-<gurobi.Var x{11,952} (value 1.0)>
 <gurobi.Var x{11,965} (value 1.0)>
 <gurobi.Var x{11,969} (value 1.0)>
 <gurobi.Var x{11,977} (value 1.0)>
 <gurobi.Var x{11,986} (value 1.0)>
+<gurobi.Var x{11,1006} (value 1.0)>
 <gurobi.Var x{11,1007} (value 1.0)>
 <gurobi.Var x{11,1010} (value 1.0)>
 <gurobi.Var x{11,1018} (value 1.0)>
@@ -1009,7 +1043,6 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{11,1030} (value 1.0)>
 <gurobi.Var x{11,1038} (value 1.0)>
 <gurobi.Var x{11,1075} (value 1.0)>
-<gurobi.Var x{11,1100} (value 1.0)>
 <gurobi.Var x{11,1101} (value 1.0)>
 <gurobi.Var x{11,1118} (value 1.0)>
 <gurobi.Var x{11,1146} (value 1.0)>
@@ -1018,16 +1051,17 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{11,1207} (value 1.0)>
 <gurobi.Var x{11,1208} (value 1.0)>
 <gurobi.Var x{11,1226} (value 1.0)>
-<gurobi.Var x{11,1236} (value 1.0)>
 <gurobi.Var x{11,1237} (value 1.0)>
 <gurobi.Var x{11,1252} (value 1.0)>
 <gurobi.Var x{11,1257} (value 1.0)>
 <gurobi.Var x{11,1313} (value 1.0)>
 <gurobi.Var x{11,1328} (value 1.0)>
+<gurobi.Var x{11,1347} (value 1.0)>
 <gurobi.Var x{11,1397} (value 1.0)>
 <gurobi.Var x{11,1427} (value 1.0)>
 <gurobi.Var x{11,1434} (value 1.0)>
 <gurobi.Var x{11,1444} (value 1.0)>
+<gurobi.Var x{11,1456} (value 1.0)>
 <gurobi.Var x{11,1463} (value 1.0)>
 <gurobi.Var x{11,1480} (value 1.0)>
 <gurobi.Var x{11,1501} (value 1.0)>
@@ -1035,13 +1069,13 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{12,3} (value 1.0)>
 <gurobi.Var x{12,15} (value 1.0)>
 <gurobi.Var x{12,25} (value 1.0)>
-<gurobi.Var x{12,55} (value 1.0)>
 <gurobi.Var x{12,91} (value 1.0)>
 <gurobi.Var x{12,105} (value 1.0)>
 <gurobi.Var x{12,139} (value 1.0)>
 <gurobi.Var x{12,162} (value 1.0)>
 <gurobi.Var x{12,172} (value 1.0)>
 <gurobi.Var x{12,179} (value 1.0)>
+<gurobi.Var x{12,185} (value 1.0)>
 <gurobi.Var x{12,228} (value 1.0)>
 <gurobi.Var x{12,241} (value 1.0)>
 <gurobi.Var x{12,249} (value 1.0)>
@@ -1051,19 +1085,20 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{12,349} (value 1.0)>
 <gurobi.Var x{12,358} (value 1.0)>
 <gurobi.Var x{12,371} (value 1.0)>
+<gurobi.Var x{12,376} (value 1.0)>
 <gurobi.Var x{12,377} (value 1.0)>
 <gurobi.Var x{12,430} (value 1.0)>
 <gurobi.Var x{12,432} (value 1.0)>
 <gurobi.Var x{12,439} (value 1.0)>
-<gurobi.Var x{12,441} (value 1.0)>
 <gurobi.Var x{12,450} (value 1.0)>
 <gurobi.Var x{12,460} (value 1.0)>
-<gurobi.Var x{12,489} (value 1.0)>
 <gurobi.Var x{12,511} (value 1.0)>
 <gurobi.Var x{12,543} (value 1.0)>
 <gurobi.Var x{12,563} (value 1.0)>
+<gurobi.Var x{12,571} (value 1.0)>
 <gurobi.Var x{12,637} (value 1.0)>
 <gurobi.Var x{12,671} (value 1.0)>
+<gurobi.Var x{12,700} (value 1.0)>
 <gurobi.Var x{12,713} (value 1.0)>
 <gurobi.Var x{12,735} (value 1.0)>
 <gurobi.Var x{12,760} (value 1.0)>
@@ -1072,9 +1107,11 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{12,780} (value 1.0)>
 <gurobi.Var x{12,791} (value 1.0)>
 <gurobi.Var x{12,824} (value 1.0)>
+<gurobi.Var x{12,830} (value 1.0)>
 <gurobi.Var x{12,856} (value 1.0)>
 <gurobi.Var x{12,916} (value 1.0)>
 <gurobi.Var x{12,918} (value 1.0)>
+<gurobi.Var x{12,921} (value 1.0)>
 <gurobi.Var x{12,934} (value 1.0)>
 <gurobi.Var x{12,983} (value 1.0)>
 <gurobi.Var x{12,984} (value 1.0)>
@@ -1086,6 +1123,7 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{12,1034} (value 1.0)>
 <gurobi.Var x{12,1059} (value 1.0)>
 <gurobi.Var x{12,1099} (value 1.0)>
+<gurobi.Var x{12,1105} (value 1.0)>
 <gurobi.Var x{12,1129} (value 1.0)>
 <gurobi.Var x{12,1138} (value 1.0)>
 <gurobi.Var x{12,1143} (value 1.0)>
@@ -1094,10 +1132,11 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{12,1204} (value 1.0)>
 <gurobi.Var x{12,1216} (value 1.0)>
 <gurobi.Var x{12,1248} (value 1.0)>
+<gurobi.Var x{12,1273} (value 1.0)>
 <gurobi.Var x{12,1284} (value 1.0)>
-<gurobi.Var x{12,1303} (value 1.0)>
-<gurobi.Var x{12,1335} (value 1.0)>
-<gurobi.Var x{12,1337} (value 1.0)>
+<gurobi.Var x{12,1321} (value 1.0)>
+<gurobi.Var x{12,1334} (value 1.0)>
+<gurobi.Var x{12,1341} (value 1.0)>
 <gurobi.Var x{12,1344} (value 1.0)>
 <gurobi.Var x{12,1361} (value 1.0)>
 <gurobi.Var x{12,1422} (value 1.0)>
@@ -1112,11 +1151,9 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{13,31} (value 1.0)>
 <gurobi.Var x{13,37} (value 1.0)>
 <gurobi.Var x{13,39} (value 1.0)>
-<gurobi.Var x{13,72} (value 1.0)>
 <gurobi.Var x{13,92} (value 1.0)>
 <gurobi.Var x{13,123} (value 1.0)>
 <gurobi.Var x{13,133} (value 1.0)>
-<gurobi.Var x{13,159} (value 1.0)>
 <gurobi.Var x{13,167} (value 1.0)>
 <gurobi.Var x{13,186} (value 1.0)>
 <gurobi.Var x{13,232} (value 1.0)>
@@ -1132,7 +1169,6 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{13,475} (value 1.0)>
 <gurobi.Var x{13,525} (value 1.0)>
 <gurobi.Var x{13,551} (value 1.0)>
-<gurobi.Var x{13,561} (value 1.0)>
 <gurobi.Var x{13,567} (value 1.0)>
 <gurobi.Var x{13,574} (value 1.0)>
 <gurobi.Var x{13,634} (value 1.0)>
@@ -1152,12 +1188,12 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{13,814} (value 1.0)>
 <gurobi.Var x{13,817} (value 1.0)>
 <gurobi.Var x{13,819} (value 1.0)>
-<gurobi.Var x{13,859} (value 1.0)>
 <gurobi.Var x{13,861} (value 1.0)>
 <gurobi.Var x{13,871} (value 1.0)>
 <gurobi.Var x{13,887} (value 1.0)>
 <gurobi.Var x{13,901} (value 1.0)>
 <gurobi.Var x{13,939} (value 1.0)>
+<gurobi.Var x{13,952} (value 1.0)>
 <gurobi.Var x{13,956} (value 1.0)>
 <gurobi.Var x{13,957} (value 1.0)>
 <gurobi.Var x{13,1046} (value 1.0)>
@@ -1168,6 +1204,7 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{13,1163} (value 1.0)>
 <gurobi.Var x{13,1182} (value 1.0)>
 <gurobi.Var x{13,1210} (value 1.0)>
+<gurobi.Var x{13,1232} (value 1.0)>
 <gurobi.Var x{13,1238} (value 1.0)>
 <gurobi.Var x{13,1250} (value 1.0)>
 <gurobi.Var x{13,1266} (value 1.0)>
@@ -1177,16 +1214,15 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{13,1307} (value 1.0)>
 <gurobi.Var x{13,1336} (value 1.0)>
 <gurobi.Var x{13,1348} (value 1.0)>
+<gurobi.Var x{13,1354} (value 1.0)>
 <gurobi.Var x{13,1355} (value 1.0)>
 <gurobi.Var x{13,1396} (value 1.0)>
 <gurobi.Var x{13,1487} (value 1.0)>
-<gurobi.Var x{13,1492} (value 1.0)>
 <gurobi.Var x{13,1496} (value 1.0)>
 <gurobi.Var x{13,1507} (value 1.0)>
 <gurobi.Var x{13,1513} (value 1.0)>
 <gurobi.Var x{13,1522} (value 1.0)>
 <gurobi.Var x{13,1553} (value 1.0)>
-<gurobi.Var x{13,1572} (value 1.0)>
 <gurobi.Var x{13,1583} (value 1.0)>
 <gurobi.Var x{13,1586} (value 1.0)>
 <gurobi.Var x{13,1593} (value 1.0)>
@@ -1196,7 +1232,6 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{14,87} (value 1.0)>
 <gurobi.Var x{14,111} (value 1.0)>
 <gurobi.Var x{14,128} (value 1.0)>
-<gurobi.Var x{14,134} (value 1.0)>
 <gurobi.Var x{14,136} (value 1.0)>
 <gurobi.Var x{14,156} (value 1.0)>
 <gurobi.Var x{14,173} (value 1.0)>
@@ -1228,9 +1263,6 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{14,599} (value 1.0)>
 <gurobi.Var x{14,631} (value 1.0)>
 <gurobi.Var x{14,677} (value 1.0)>
-<gurobi.Var x{14,682} (value 1.0)>
-<gurobi.Var x{14,683} (value 1.0)>
-<gurobi.Var x{14,724} (value 1.0)>
 <gurobi.Var x{14,729} (value 1.0)>
 <gurobi.Var x{14,732} (value 1.0)>
 <gurobi.Var x{14,825} (value 1.0)>
@@ -1247,16 +1279,18 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{14,1113} (value 1.0)>
 <gurobi.Var x{14,1114} (value 1.0)>
 <gurobi.Var x{14,1116} (value 1.0)>
-<gurobi.Var x{14,1161} (value 1.0)>
 <gurobi.Var x{14,1164} (value 1.0)>
 <gurobi.Var x{14,1172} (value 1.0)>
 <gurobi.Var x{14,1215} (value 1.0)>
+<gurobi.Var x{14,1233} (value 1.0)>
 <gurobi.Var x{14,1264} (value 1.0)>
 <gurobi.Var x{14,1269} (value 1.0)>
 <gurobi.Var x{14,1270} (value 1.0)>
 <gurobi.Var x{14,1275} (value 1.0)>
 <gurobi.Var x{14,1279} (value 1.0)>
 <gurobi.Var x{14,1295} (value 1.0)>
+<gurobi.Var x{14,1335} (value 1.0)>
+<gurobi.Var x{14,1337} (value 1.0)>
 <gurobi.Var x{14,1359} (value 1.0)>
 <gurobi.Var x{14,1393} (value 1.0)>
 <gurobi.Var x{14,1405} (value 1.0)>
@@ -1264,14 +1298,14 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{14,1455} (value 1.0)>
 <gurobi.Var x{14,1465} (value 1.0)>
 <gurobi.Var x{14,1495} (value 1.0)>
-<gurobi.Var x{14,1506} (value 1.0)>
+<gurobi.Var x{14,1545} (value 1.0)>
 <gurobi.Var x{14,1555} (value 1.0)>
 <gurobi.Var x{14,1558} (value 1.0)>
 <gurobi.Var x{14,1565} (value 1.0)>
 <gurobi.Var x{15,2} (value 1.0)>
-<gurobi.Var x{15,28} (value 1.0)>
 <gurobi.Var x{15,52} (value 1.0)>
 <gurobi.Var x{15,83} (value 1.0)>
+<gurobi.Var x{15,88} (value 1.0)>
 <gurobi.Var x{15,100} (value 1.0)>
 <gurobi.Var x{15,112} (value 1.0)>
 <gurobi.Var x{15,129} (value 1.0)>
@@ -1296,11 +1330,15 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{15,449} (value 1.0)>
 <gurobi.Var x{15,477} (value 1.0)>
 <gurobi.Var x{15,482} (value 1.0)>
+<gurobi.Var x{15,485} (value 1.0)>
 <gurobi.Var x{15,488} (value 1.0)>
+<gurobi.Var x{15,500} (value 1.0)>
 <gurobi.Var x{15,603} (value 1.0)>
 <gurobi.Var x{15,638} (value 1.0)>
 <gurobi.Var x{15,666} (value 1.0)>
 <gurobi.Var x{15,688} (value 1.0)>
+<gurobi.Var x{15,711} (value 1.0)>
+<gurobi.Var x{15,724} (value 1.0)>
 <gurobi.Var x{15,730} (value 1.0)>
 <gurobi.Var x{15,739} (value 1.0)>
 <gurobi.Var x{15,765} (value 1.0)>
@@ -1311,7 +1349,6 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{15,820} (value 1.0)>
 <gurobi.Var x{15,831} (value 1.0)>
 <gurobi.Var x{15,850} (value 1.0)>
-<gurobi.Var x{15,875} (value 1.0)>
 <gurobi.Var x{15,876} (value 1.0)>
 <gurobi.Var x{15,882} (value 1.0)>
 <gurobi.Var x{15,902} (value 1.0)>
@@ -1320,7 +1357,6 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{15,936} (value 1.0)>
 <gurobi.Var x{15,940} (value 1.0)>
 <gurobi.Var x{15,943} (value 1.0)>
-<gurobi.Var x{15,954} (value 1.0)>
 <gurobi.Var x{15,960} (value 1.0)>
 <gurobi.Var x{15,963} (value 1.0)>
 <gurobi.Var x{15,980} (value 1.0)>
@@ -1334,7 +1370,6 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{15,1179} (value 1.0)>
 <gurobi.Var x{15,1191} (value 1.0)>
 <gurobi.Var x{15,1196} (value 1.0)>
-<gurobi.Var x{15,1233} (value 1.0)>
 <gurobi.Var x{15,1249} (value 1.0)>
 <gurobi.Var x{15,1314} (value 1.0)>
 <gurobi.Var x{15,1358} (value 1.0)>
@@ -1343,10 +1378,11 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{15,1399} (value 1.0)>
 <gurobi.Var x{15,1404} (value 1.0)>
 <gurobi.Var x{15,1423} (value 1.0)>
+<gurobi.Var x{15,1424} (value 1.0)>
 <gurobi.Var x{15,1441} (value 1.0)>
 <gurobi.Var x{15,1446} (value 1.0)>
 <gurobi.Var x{15,1457} (value 1.0)>
-<gurobi.Var x{15,1531} (value 1.0)>
+<gurobi.Var x{15,1459} (value 1.0)>
 <gurobi.Var x{15,1575} (value 1.0)>
 <gurobi.Var x{15,1584} (value 1.0)>
 <gurobi.Var x{16,6} (value 1.0)>
@@ -1359,18 +1395,18 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{16,85} (value 1.0)>
 <gurobi.Var x{16,98} (value 1.0)>
 <gurobi.Var x{16,113} (value 1.0)>
+<gurobi.Var x{16,134} (value 1.0)>
 <gurobi.Var x{16,158} (value 1.0)>
 <gurobi.Var x{16,227} (value 1.0)>
+<gurobi.Var x{16,233} (value 1.0)>
 <gurobi.Var x{16,251} (value 1.0)>
 <gurobi.Var x{16,257} (value 1.0)>
 <gurobi.Var x{16,262} (value 1.0)>
 <gurobi.Var x{16,290} (value 1.0)>
 <gurobi.Var x{16,293} (value 1.0)>
 <gurobi.Var x{16,308} (value 1.0)>
-<gurobi.Var x{16,313} (value 1.0)>
 <gurobi.Var x{16,319} (value 1.0)>
 <gurobi.Var x{16,329} (value 1.0)>
-<gurobi.Var x{16,361} (value 1.0)>
 <gurobi.Var x{16,389} (value 1.0)>
 <gurobi.Var x{16,458} (value 1.0)>
 <gurobi.Var x{16,459} (value 1.0)>
@@ -1381,7 +1417,6 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{16,608} (value 1.0)>
 <gurobi.Var x{16,639} (value 1.0)>
 <gurobi.Var x{16,641} (value 1.0)>
-<gurobi.Var x{16,700} (value 1.0)>
 <gurobi.Var x{16,703} (value 1.0)>
 <gurobi.Var x{16,712} (value 1.0)>
 <gurobi.Var x{16,736} (value 1.0)>
@@ -1403,6 +1438,7 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{16,1029} (value 1.0)>
 <gurobi.Var x{16,1096} (value 1.0)>
 <gurobi.Var x{16,1121} (value 1.0)>
+<gurobi.Var x{16,1161} (value 1.0)>
 <gurobi.Var x{16,1178} (value 1.0)>
 <gurobi.Var x{16,1225} (value 1.0)>
 <gurobi.Var x{16,1230} (value 1.0)>
@@ -1439,12 +1475,10 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{17,359} (value 1.0)>
 <gurobi.Var x{17,385} (value 1.0)>
 <gurobi.Var x{17,397} (value 1.0)>
-<gurobi.Var x{17,400} (value 1.0)>
 <gurobi.Var x{17,409} (value 1.0)>
 <gurobi.Var x{17,419} (value 1.0)>
 <gurobi.Var x{17,422} (value 1.0)>
 <gurobi.Var x{17,426} (value 1.0)>
-<gurobi.Var x{17,433} (value 1.0)>
 <gurobi.Var x{17,451} (value 1.0)>
 <gurobi.Var x{17,474} (value 1.0)>
 <gurobi.Var x{17,499} (value 1.0)>
@@ -1456,18 +1490,18 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{17,594} (value 1.0)>
 <gurobi.Var x{17,632} (value 1.0)>
 <gurobi.Var x{17,635} (value 1.0)>
-<gurobi.Var x{17,645} (value 1.0)>
 <gurobi.Var x{17,661} (value 1.0)>
 <gurobi.Var x{17,705} (value 1.0)>
 <gurobi.Var x{17,709} (value 1.0)>
 <gurobi.Var x{17,710} (value 1.0)>
 <gurobi.Var x{17,752} (value 1.0)>
 <gurobi.Var x{17,782} (value 1.0)>
+<gurobi.Var x{17,790} (value 1.0)>
 <gurobi.Var x{17,812} (value 1.0)>
 <gurobi.Var x{17,815} (value 1.0)>
-<gurobi.Var x{17,843} (value 1.0)>
 <gurobi.Var x{17,851} (value 1.0)>
 <gurobi.Var x{17,855} (value 1.0)>
+<gurobi.Var x{17,875} (value 1.0)>
 <gurobi.Var x{17,892} (value 1.0)>
 <gurobi.Var x{17,904} (value 1.0)>
 <gurobi.Var x{17,935} (value 1.0)>
@@ -1479,12 +1513,13 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{17,1068} (value 1.0)>
 <gurobi.Var x{17,1086} (value 1.0)>
 <gurobi.Var x{17,1109} (value 1.0)>
+<gurobi.Var x{17,1124} (value 1.0)>
+<gurobi.Var x{17,1132} (value 1.0)>
 <gurobi.Var x{17,1186} (value 1.0)>
 <gurobi.Var x{17,1218} (value 1.0)>
 <gurobi.Var x{17,1219} (value 1.0)>
 <gurobi.Var x{17,1222} (value 1.0)>
 <gurobi.Var x{17,1235} (value 1.0)>
-<gurobi.Var x{17,1273} (value 1.0)>
 <gurobi.Var x{17,1281} (value 1.0)>
 <gurobi.Var x{17,1286} (value 1.0)>
 <gurobi.Var x{17,1293} (value 1.0)>
@@ -1504,13 +1539,15 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{17,1550} (value 1.0)>
 <gurobi.Var x{17,1557} (value 1.0)>
 <gurobi.Var x{18,10} (value 1.0)>
+<gurobi.Var x{18,28} (value 1.0)>
 <gurobi.Var x{18,38} (value 1.0)>
 <gurobi.Var x{18,63} (value 1.0)>
 <gurobi.Var x{18,68} (value 1.0)>
-<gurobi.Var x{18,74} (value 1.0)>
+<gurobi.Var x{18,79} (value 1.0)>
 <gurobi.Var x{18,130} (value 1.0)>
 <gurobi.Var x{18,131} (value 1.0)>
 <gurobi.Var x{18,135} (value 1.0)>
+<gurobi.Var x{18,141} (value 1.0)>
 <gurobi.Var x{18,147} (value 1.0)>
 <gurobi.Var x{18,183} (value 1.0)>
 <gurobi.Var x{18,187} (value 1.0)>
@@ -1520,6 +1557,7 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{18,260} (value 1.0)>
 <gurobi.Var x{18,268} (value 1.0)>
 <gurobi.Var x{18,322} (value 1.0)>
+<gurobi.Var x{18,361} (value 1.0)>
 <gurobi.Var x{18,363} (value 1.0)>
 <gurobi.Var x{18,374} (value 1.0)>
 <gurobi.Var x{18,388} (value 1.0)>
@@ -1528,12 +1566,15 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{18,468} (value 1.0)>
 <gurobi.Var x{18,529} (value 1.0)>
 <gurobi.Var x{18,535} (value 1.0)>
+<gurobi.Var x{18,547} (value 1.0)>
 <gurobi.Var x{18,559} (value 1.0)>
 <gurobi.Var x{18,585} (value 1.0)>
+<gurobi.Var x{18,619} (value 1.0)>
 <gurobi.Var x{18,701} (value 1.0)>
 <gurobi.Var x{18,755} (value 1.0)>
 <gurobi.Var x{18,763} (value 1.0)>
 <gurobi.Var x{18,776} (value 1.0)>
+<gurobi.Var x{18,779} (value 1.0)>
 <gurobi.Var x{18,794} (value 1.0)>
 <gurobi.Var x{18,807} (value 1.0)>
 <gurobi.Var x{18,833} (value 1.0)>
@@ -1541,14 +1582,12 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{18,913} (value 1.0)>
 <gurobi.Var x{18,949} (value 1.0)>
 <gurobi.Var x{18,953} (value 1.0)>
-<gurobi.Var x{18,1016} (value 1.0)>
 <gurobi.Var x{18,1020} (value 1.0)>
 <gurobi.Var x{18,1031} (value 1.0)>
 <gurobi.Var x{18,1036} (value 1.0)>
 <gurobi.Var x{18,1043} (value 1.0)>
 <gurobi.Var x{18,1081} (value 1.0)>
 <gurobi.Var x{18,1115} (value 1.0)>
-<gurobi.Var x{18,1124} (value 1.0)>
 <gurobi.Var x{18,1125} (value 1.0)>
 <gurobi.Var x{18,1131} (value 1.0)>
 <gurobi.Var x{18,1133} (value 1.0)>
@@ -1569,9 +1608,6 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{18,1388} (value 1.0)>
 <gurobi.Var x{18,1409} (value 1.0)>
 <gurobi.Var x{18,1436} (value 1.0)>
-<gurobi.Var x{18,1456} (value 1.0)>
-<gurobi.Var x{18,1459} (value 1.0)>
-<gurobi.Var x{18,1462} (value 1.0)>
 <gurobi.Var x{18,1483} (value 1.0)>
 <gurobi.Var x{18,1500} (value 1.0)>
 <gurobi.Var x{18,1568} (value 1.0)>
@@ -1586,18 +1622,18 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{19,82} (value 1.0)>
 <gurobi.Var x{19,108} (value 1.0)>
 <gurobi.Var x{19,140} (value 1.0)>
+<gurobi.Var x{19,159} (value 1.0)>
 <gurobi.Var x{19,161} (value 1.0)>
 <gurobi.Var x{19,164} (value 1.0)>
 <gurobi.Var x{19,194} (value 1.0)>
 <gurobi.Var x{19,196} (value 1.0)>
-<gurobi.Var x{19,202} (value 1.0)>
 <gurobi.Var x{19,216} (value 1.0)>
 <gurobi.Var x{19,237} (value 1.0)>
 <gurobi.Var x{19,242} (value 1.0)>
-<gurobi.Var x{19,243} (value 1.0)>
 <gurobi.Var x{19,259} (value 1.0)>
 <gurobi.Var x{19,274} (value 1.0)>
 <gurobi.Var x{19,275} (value 1.0)>
+<gurobi.Var x{19,287} (value 1.0)>
 <gurobi.Var x{19,302} (value 1.0)>
 <gurobi.Var x{19,316} (value 1.0)>
 <gurobi.Var x{19,318} (value 1.0)>
@@ -1606,13 +1642,12 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{19,368} (value 1.0)>
 <gurobi.Var x{19,387} (value 1.0)>
 <gurobi.Var x{19,423} (value 1.0)>
+<gurobi.Var x{19,443} (value 1.0)>
 <gurobi.Var x{19,445} (value 1.0)>
 <gurobi.Var x{19,448} (value 1.0)>
 <gurobi.Var x{19,453} (value 1.0)>
 <gurobi.Var x{19,467} (value 1.0)>
-<gurobi.Var x{19,485} (value 1.0)>
 <gurobi.Var x{19,491} (value 1.0)>
-<gurobi.Var x{19,495} (value 1.0)>
 <gurobi.Var x{19,512} (value 1.0)>
 <gurobi.Var x{19,545} (value 1.0)>
 <gurobi.Var x{19,584} (value 1.0)>
@@ -1624,20 +1659,21 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{19,696} (value 1.0)>
 <gurobi.Var x{19,753} (value 1.0)>
 <gurobi.Var x{19,759} (value 1.0)>
+<gurobi.Var x{19,843} (value 1.0)>
 <gurobi.Var x{19,846} (value 1.0)>
 <gurobi.Var x{19,877} (value 1.0)>
 <gurobi.Var x{19,888} (value 1.0)>
 <gurobi.Var x{19,897} (value 1.0)>
-<gurobi.Var x{19,899} (value 1.0)>
-<gurobi.Var x{19,1014} (value 1.0)>
 <gurobi.Var x{19,1019} (value 1.0)>
 <gurobi.Var x{19,1032} (value 1.0)>
 <gurobi.Var x{19,1033} (value 1.0)>
+<gurobi.Var x{19,1039} (value 1.0)>
 <gurobi.Var x{19,1045} (value 1.0)>
 <gurobi.Var x{19,1093} (value 1.0)>
 <gurobi.Var x{19,1098} (value 1.0)>
 <gurobi.Var x{19,1103} (value 1.0)>
 <gurobi.Var x{19,1110} (value 1.0)>
+<gurobi.Var x{19,1119} (value 1.0)>
 <gurobi.Var x{19,1126} (value 1.0)>
 <gurobi.Var x{19,1127} (value 1.0)>
 <gurobi.Var x{19,1156} (value 1.0)>
@@ -1649,15 +1685,16 @@ Best objective -9.787700000000e+04, best bound -9.782200000000e+04, gap 0.0562%
 <gurobi.Var x{19,1260} (value 1.0)>
 <gurobi.Var x{19,1308} (value 1.0)>
 <gurobi.Var x{19,1372} (value 1.0)>
+<gurobi.Var x{19,1380} (value 1.0)>
 <gurobi.Var x{19,1398} (value 1.0)>
 <gurobi.Var x{19,1453} (value 1.0)>
-<gurobi.Var x{19,1514} (value 1.0)>
+<gurobi.Var x{19,1493} (value 1.0)>
 <gurobi.Var x{19,1520} (value 1.0)>
 <gurobi.Var x{19,1521} (value 1.0)>
 <gurobi.Var x{19,1523} (value 1.0)>
+<gurobi.Var x{19,1531} (value 1.0)>
 <gurobi.Var x{19,1532} (value 1.0)>
 <gurobi.Var x{19,1538} (value 1.0)>
-<gurobi.Var x{19,1547} (value 1.0)>
 <gurobi.Var x{19,1551} (value 1.0)>
 <gurobi.Var x{19,1599} (value 1.0)>
-Valor da funcao objetivo: -97877
+Valor da funcao objetivo: -97853
