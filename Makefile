@@ -4,4 +4,4 @@ run:
 	./run.sh
 
 clean:
-	rm solutions/*
+	rm solutions/inst/*
