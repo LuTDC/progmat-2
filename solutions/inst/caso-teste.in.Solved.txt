@@ -1,0 +1,82 @@
+Academic license - for non-commercial use only - expires 2022-10-07
+Using license file /home/tomieiro/gurobi.lic
+Changed value of parameter TimeLimit to 180.0
+   Prev: inf  Min: 0.0  Max: inf  Default: inf
+Changed value of parameter Presolve to 2
+   Prev: -1  Min: -1  Max: 2  Default: -1
+Changed value of parameter Cuts to 3
+   Prev: -1  Min: -1  Max: 3  Default: -1
+Changed value of parameter VarBranch to 0
+   Prev: -1  Min: -1  Max: 3  Default: -1
+Changed value of parameter BranchDir to 1
+   Prev: 0  Min: -1  Max: 1  Default: 0
+Gurobi Optimizer version 9.1.2 build v9.1.2rc0 (linux64)
+Thread count: 2 physical cores, 4 logical processors, using up to 4 threads
+Optimize a model with 30 rows, 200 columns and 400 nonzeros
+Model fingerprint: 0x72993a1a
+Variable types: 0 continuous, 200 integer (200 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 1e+02]
+  Objective range  [1e+00, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 3e+02]
+Found heuristic solution: objective -964.0000000
+Presolve removed 3 rows and 50 columns
+Presolve time: 0.00s
+Presolved: 27 rows, 150 columns, 298 nonzeros
+Found heuristic solution: objective -479.0000000
+Variable types: 0 continuous, 150 integer (150 binary)
+Presolved: 27 rows, 150 columns, 298 nonzeros
+
+
+Root relaxation: objective -1.759484e+02, 10 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 -175.94842    0    8 -479.00000 -175.94842  63.3%     -    0s
+H    0     0                    -235.0000000 -175.94842  25.1%     -    0s
+H    0     0                    -218.0000000 -175.94842  19.3%     -    0s
+H    0     0                    -206.0000000 -175.94842  14.6%     -    0s
+H    0     0                    -190.0000000 -175.94842  7.40%     -    0s
+     0     0 -188.39091    0    3 -190.00000 -188.39091  0.85%     -    0s
+
+Cutting planes:
+  Gomory: 4
+  Cover: 4
+  Clique: 1
+  MIR: 2
+  StrongCG: 2
+  Flow cover: 3
+  Zero half: 3
+  RLT: 1
+
+Explored 1 nodes (17 simplex iterations) in 0.01 seconds
+Thread count was 4 (of 4 available processors)
+
+Solution count 6: -190 -206 -218 ... -964
+No other solutions better than -190
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective -1.900000000000e+02, best bound -1.900000000000e+02, gap 0.0000%
+<gurobi.Var x{0,12} (value 1.0)>
+<gurobi.Var x{1,5} (value 1.0)>
+<gurobi.Var x{2,0} (value 1.0)>
+<gurobi.Var x{3,1} (value 1.0)>
+<gurobi.Var x{3,4} (value 1.0)>
+<gurobi.Var x{3,14} (value 1.0)>
+<gurobi.Var x{4,16} (value 1.0)>
+<gurobi.Var x{5,2} (value 1.0)>
+<gurobi.Var x{5,11} (value 1.0)>
+<gurobi.Var x{6,6} (value 1.0)>
+<gurobi.Var x{6,10} (value 1.0)>
+<gurobi.Var x{6,15} (value 1.0)>
+<gurobi.Var x{6,18} (value 1.0)>
+<gurobi.Var x{7,3} (value 1.0)>
+<gurobi.Var x{7,8} (value 1.0)>
+<gurobi.Var x{7,17} (value 1.0)>
+<gurobi.Var x{8,13} (value 1.0)>
+<gurobi.Var x{8,19} (value 1.0)>
+<gurobi.Var x{9,7} (value 1.0)>
+<gurobi.Var x{9,9} (value 1.0)>
+Valor da funcao objetivo: -190
